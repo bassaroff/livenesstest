@@ -1,7 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    OzLiveness.open({
+
+      // ...
+      style: {
+        //the backward compatibility block
+        doc_color: "",
+        face_color_success: "",
+        face_color_fail: "",
+        // the current customization block
+        faceFrame: {
+          faceReady: "",
+          faceNotReady: "",
+        },
+        centerHint: {
+          textSize: "",
+          color: "",
+          yPosition: "",
+          letterSpacing: "",
+          fontStyle: "",
+        },
+        closeButton: {
+          image: "",
+        },
+        backgroundOutsideFrame: {
+          color: "",
+        },
+      },
+      // ...
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
